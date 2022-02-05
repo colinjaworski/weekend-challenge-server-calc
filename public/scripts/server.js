@@ -8,19 +8,18 @@ app.use(express.static('public/scripts'));
 let calculatorCommands = [];
 
 app.post('/equation', (req,res) => {
-   
     console.log(`Get a POST request!`, req.body);
-
     let commands = req.body;
-
     // Push the information into the array
     console.log(`Adding new inventory: `, commands);
     calculatorCommands.push(commands);
-
     // Send back a status code of 201
     res.sendStatus(201);
 });
-
+app.get('/equation', function(req, res){
+    console.log('request at /equation was made', req.body);
+    res.send(calculatorCommands);
+  })
 
 
 app.listen(port, function() {
