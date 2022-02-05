@@ -41,16 +41,29 @@ function addItem() {
       method: 'POST', 
       url: '/equation',  
       data: { 
-            inputOne: $('#num-one').val(),
+            inputOne: $('#num1-input').val(),
             operator: firstButton,          
-            inputTwo: $('#num-two').val(),
+            inputTwo: $('#num2-input').val(),
             equals: '=',
             total: ''
       }
     }).then(function(response){
         console.log('information sent from server!')
-
+        getinventory();
     }).catch(function(response){
         console.log('no catch', response);
     })
 }
+
+function getinventory() {
+   
+    $.ajax({
+      method: 'GET',
+      url: '/equation',
+    }).then(function(response) { 
+        console.log("SUCCESS!!!", response);
+    }).catch(function(response) {
+        alert('Request failed. Try again later.');
+      }
+    );
+  }
