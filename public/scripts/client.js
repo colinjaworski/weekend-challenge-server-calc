@@ -1,6 +1,6 @@
 $(document).ready(onReady);
 let firstButton 
-
+ 
 
 function onReady() {
     $('#add-button').on('click', addClick);
@@ -13,50 +13,44 @@ function onReady() {
 
 
 function addClick(){
-    console.log('add button!');
+    // console.log('add button!');
     firstButton = '+'
 }
 function subtractClick(){
-    console.log('subtract button!');
+    // console.log('subtract button!');
     firstButton = '-'
 }
 function multiplyClick(){
-    console.log('multiply button!');
+    // console.log('multiply button!');
     firstButton = '*'
 }
 function divideClick(){
-    console.log('divide button!');
+    // console.log('divide button!');
     firstButton = '/'
 }
 function equalClick(){
-    // console.log('equal button!');
-    console.log('first button is...', firstButton);
+    secondButton = '='
+    addItem()
 }
 function clearClick(){
-    console.log('clear button!')
+    // console.log('clear button!')
 }
 
+function addItem() { 
+    $.ajax({
+      method: 'POST', 
+      url: '/equation',  
+      data: { 
+            inputOne: $('#num-one').val(),
+            operator: firstButton,          
+            inputTwo: $('#num-two').val(),
+            equals: '=',
+            total: ''
+      }
+    }).then(function(response){
+        console.log('information sent from server!')
 
-
-
-
-
-
-// function addItem() { 
-//     $.ajax({
-//       method: 'POST', 
-//       url: '/equation',  
-//       data: { 
-//               inputOne: $('#num-one').val(),
-//               inputTwo: $('#num-two').val(),
-//               operator: // this is where the button that was pressed will be assigned. 
-
-
-//       }
-//     }).then(function(response){
-        
-
-//     }).catch(function(response){
-//         console.log('UUUUUHHHGGG', response);
-//     })
-// }
+    }).catch(function(response){
+        console.log('no catch', response);
+    })
+}
