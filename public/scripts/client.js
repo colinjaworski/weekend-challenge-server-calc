@@ -1,5 +1,5 @@
 $(document).ready(onReady);
-// Let firstButton = 
+let firstButton 
 
 
 function onReady() {
@@ -13,19 +13,24 @@ function onReady() {
 
 
 function addClick(){
-    console.log('add button!')
+    console.log('add button!');
+    firstButton = '+'
 }
 function subtractClick(){
-    console.log('subtract button!')
+    console.log('subtract button!');
+    firstButton = '-'
 }
 function multiplyClick(){
-    console.log('multiply button!')
+    console.log('multiply button!');
+    firstButton = '*'
 }
 function divideClick(){
-    console.log('divide button!')
+    console.log('divide button!');
+    firstButton = '/'
 }
 function equalClick(){
-    console.log('equal button!')
+    // console.log('equal button!');
+    console.log('first button is...', firstButton);
 }
 function clearClick(){
     console.log('clear button!')
@@ -45,6 +50,8 @@ function clearClick(){
 //               inputOne: $('#num-one').val(),
 //               inputTwo: $('#num-two').val(),
 //               operator: // this is where the button that was pressed will be assigned. 
+
+
 //       }
 //     }).then(function(response){
         
