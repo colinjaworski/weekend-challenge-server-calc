@@ -33,7 +33,9 @@ function equalClick(){
     addItem()
 }
 function clearClick(){
-    // console.log('clear button!')
+    console.log('clear button!');
+    $('#num1-input').val('');
+    $('#num2-input').val('');
 }
 
 function addItem() { 
@@ -48,7 +50,7 @@ function addItem() {
             total: ''
       }
     }).then(function(response){
-        console.log('information sent from server!')
+        // console.log('information sent from server!')
         getinventory();
     }).catch(function(response){
         console.log('no catch', response);
@@ -61,7 +63,7 @@ function getinventory() {
       method: 'GET',
       url: '/equation',
     }).then(function(response) { 
-        console.log("SUCCESS!!!", response);
+        // console.log("SUCCESS!!!", response);
         appendHistory(response);
         appendTotal(response);
     }).catch(function(response) {
