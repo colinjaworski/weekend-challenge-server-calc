@@ -13,13 +13,32 @@ app.post('/equation', (req,res) => {
     // Push the information into the array
     console.log(`Adding new inventory: `, commands);
     calculatorCommands.push(commands);
-    // Send back a status code of 201
+    doMath(calculatorCommands);
     res.sendStatus(201);
 });
 app.get('/equation', function(req, res){
     console.log('request at /equation was made', req.body);
     res.send(calculatorCommands);
   })
+
+let total = 0;
+
+function doMath(calculatorCommands) {
+    for( let i=0; i<calculatorCommands.length; i++){
+        if (calculatorCommands[i].operator === '+'){
+            total = Number(calculatorCommands[i].inputOne) + Number(calculatorCommands[i].inputTwo);
+            console.log('the total is', total)
+        }
+    }
+
+}
+
+
+
+
+
+
+
 
 
 app.listen(port, function() {
