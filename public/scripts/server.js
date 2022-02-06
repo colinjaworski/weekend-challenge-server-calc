@@ -27,7 +27,16 @@ function doMath(calculatorCommands) {
     for( let i=0; i<calculatorCommands.length; i++){
         if (calculatorCommands[i].operator === '+'){
             total = Number(calculatorCommands[i].inputOne) + Number(calculatorCommands[i].inputTwo);
-            console.log('the total is', total)
+            console.log('the total is', total);
+        } else if (calculatorCommands[i].operator === '-'){
+            total = Number(calculatorCommands[i].inputOne) - Number(calculatorCommands[i].inputTwo);
+            console.log('the total is', total);
+        } else if (calculatorCommands[i].operator === '*'){
+            total = Number(calculatorCommands[i].inputOne) * Number(calculatorCommands[i].inputTwo);
+            console.log('the total is', total);
+        } else if (calculatorCommands[i].operator === '/'){
+            total = Number(calculatorCommands[i].inputOne) / Number(calculatorCommands[i].inputTwo);
+            console.log('the total is', total);
         }
     }
 
