@@ -78,11 +78,8 @@ function getinventory() {
       }
     function appendTotal(total) {
         $('#output').empty();
-        for (let item of total) { // item is one of the objects in the array
-            $('#output').append(`
-            <h2>${item.total}</h2>
-            `);
-        }
+        // console.log('displaying total',total[total.length-1].total) 
+        $('#output').append(` <h2>${total[total.length-1].total}</h2> `)  
     }
 }
 
