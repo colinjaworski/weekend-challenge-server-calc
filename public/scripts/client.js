@@ -1,6 +1,6 @@
 $(document).ready(onReady);
 let firstButton 
-const myTimeout = setTimeout(appendPic, 3000);
+const myTimeout = setTimeout(appendPic, 2000);
 
 
 function onReady() {
@@ -32,6 +32,8 @@ function divideClick(){
 function equalClick(){
     secondButton = '='
     addItem();
+    $('#num1-input').val('');
+    $('#num2-input').val('');
 }
 function clearClick(){
     console.log('clear button!');
@@ -40,7 +42,7 @@ function clearClick(){
 }
 
 function addItem() { 
-
+    if($('#num1-input').val() && firstButton && $('#num2-input').val()){
     $.ajax({
       method: 'POST', 
       url: '/equation',  
@@ -56,8 +58,12 @@ function addItem() {
         getinventory();
     }).catch(function(response){
         console.log('no catch', response);
-    })
-}
+    })}else if($('#num1-input').val('') && $('#num2-input').val('')){
+        // console.log('provide inputs plz')
+        alert("Hello! I am an alert box!!");
+        alert("You should've included a input value");
+        alert("Maybe take a break, go for a walk or something");
+}}
 
 function getinventory() {
    
