@@ -62,8 +62,27 @@ function getinventory() {
       url: '/equation',
     }).then(function(response) { 
         console.log("SUCCESS!!!", response);
+        appendHistory(response);
+        appendTotal(response);
     }).catch(function(response) {
         alert('Request failed. Try again later.');
       }
     );
-  }
+    function appendHistory(arr) { // response from .then
+        $('#calc-history').empty();
+        for (let item of arr) { // item is one of the objects in the array
+            $('#calc-history').append(`
+            <li>${item.inputOne} ${item.operator} ${item.inputTwo} ${item.equals} ${item.total}</li>
+            `);
+        }
+      }
+    function appendTotal(total) {
+        $('#output').empty();
+        for (let item of total) { // item is one of the objects in the array
+            $('#output').append(`
+            <h2>${item.total}</h2>
+            `);
+        }
+    }
+}
+
