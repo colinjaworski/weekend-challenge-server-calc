@@ -27,19 +27,19 @@ function doMath(calculatorCommands) {
     // for( let i=0; i<calculatorCommands.length; i++){
         if (calculatorCommands[calculatorCommands.length-1].operator === '+'){
             total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) + Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
-            console.log('the total is', total);
+            calculatorCommands[calculatorCommands.length-1].total = total
         } else if (calculatorCommands[calculatorCommands.length-1].operator === '-'){
             total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) - Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
-            console.log('the total is', total);
+            calculatorCommands[calculatorCommands.length-1].total = total
         } else if (calculatorCommands[calculatorCommands.length-1].operator === '*'){
             total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) * Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
-            console.log('the total is', total);
+            calculatorCommands[calculatorCommands.length-1].total = total
         } else if (calculatorCommands[calculatorCommands.length-1].operator === '/'){
             total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) / Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
-            console.log('the total is', total);
+            calculatorCommands[calculatorCommands.length-1].total = total
         }
     // }
-
+        console.log('updated array', calculatorCommands)
 }
 
 
