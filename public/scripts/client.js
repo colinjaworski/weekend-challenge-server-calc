@@ -1,6 +1,7 @@
 $(document).ready(onReady);
 let firstButton 
- 
+const myTimeout = setTimeout(appendPic, 3000);
+
 
 function onReady() {
     $('#add-button').on('click', addClick);
@@ -30,7 +31,7 @@ function divideClick(){
 }
 function equalClick(){
     secondButton = '='
-    addItem()
+    addItem();
 }
 function clearClick(){
     console.log('clear button!');
@@ -39,6 +40,7 @@ function clearClick(){
 }
 
 function addItem() { 
+
     $.ajax({
       method: 'POST', 
       url: '/equation',  
@@ -85,3 +87,7 @@ function getinventory() {
     }
 }
 
+function appendPic(){
+   
+    $('#picture-palace').append(`<img src="https://sayingimages.com/wp-content/uploads/didnt-know-funny-math-memes.jpg" width="200" height="200">`)
+}
