@@ -28,15 +28,15 @@ function doMath(calculatorCommands) {
         if (calculatorCommands[calculatorCommands.length-1].operator === '+'){
             total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) + Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
             console.log('the total is', total);
-        // } else if (calculatorCommands[i].operator === '-'){
-        //     total = Number(calculatorCommands[i].inputOne) - Number(calculatorCommands[i].inputTwo);
-        //     console.log('the total is', total);
-        // } else if (calculatorCommands[i].operator === '*'){
-        //     total = Number(calculatorCommands[i].inputOne) * Number(calculatorCommands[i].inputTwo);
-        //     console.log('the total is', total);
-        // } else if (calculatorCommands[i].operator === '/'){
-        //     total = Number(calculatorCommands[i].inputOne) / Number(calculatorCommands[i].inputTwo);
-        //     console.log('the total is', total);
+        } else if (calculatorCommands[calculatorCommands.length-1].operator === '-'){
+            total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) - Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
+            console.log('the total is', total);
+        } else if (calculatorCommands[calculatorCommands.length-1].operator === '*'){
+            total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) * Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
+            console.log('the total is', total);
+        } else if (calculatorCommands[calculatorCommands.length-1].operator === '/'){
+            total = Number(calculatorCommands[calculatorCommands.length-1].inputOne) / Number(calculatorCommands[calculatorCommands.length-1].inputTwo);
+            console.log('the total is', total);
         }
     // }
 
